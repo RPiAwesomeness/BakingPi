@@ -7,7 +7,7 @@ GetGpioAddress:
 SetGpioFunction:
     @ r0 <= 53 - there's 54 GPIO pins on a Pi B, so the value in r0 has to be between 0 and 53
     cmp r0,#53
-    @ r1 <= 7
+    @ r1 <= 7 - there's 8 states the pin can be in so value in r1 has to be between 0 and 8
     cmpls r1,#7
     @ Jump back to the calling function if previous comparison
     movhi pc,lr
